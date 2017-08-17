@@ -2,7 +2,7 @@
 
 > A Vue.js try about note
 
-> This is a note demo what uses vue and vuex  
+> This is a note demo which uses vue and vuex  
 
 ## how to run it 
 
