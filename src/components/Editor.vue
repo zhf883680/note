@@ -6,13 +6,16 @@
 
 <script>
 export default {
+  //计算属性
   computed:{
     activeNoteText(){
+      //显示的值
       return this.$store.getters.activeNote.text
     }
   },
   methods:{
       editNote(e){
+        //更改值,分发action中 'editNote'
           this.$store.dispatch('editNote',e.target.value)
       }
   }

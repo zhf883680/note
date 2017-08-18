@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- 工具栏,列表栏,编辑框模块 -->
     <toolbar></toolbar>
     <note-list></note-list>
     <editor></editor>

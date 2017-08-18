@@ -19,9 +19,11 @@ export default {
       this.$store.dispatch('addNote')
     },
     toggleFavorite(){
+      //切换
       this.$store.dispatch('toggleFavorite')
     },
     deleteNote(){
+      //删除
       this.$store.dispatch('deleteNote')
     }
   }

@@ -3,13 +3,13 @@
     <div id="list-header">
       <h2>Notes</h2>
       <div class="btn-group btn-group-justified" role="group">
-        <!-- All Notes button -->
+        <!-- 现实全部按钮 -->
         <div class="btn-group" role="group">
           <button @click="show='all'" type="button" class="btn btn-default" v-bind:class="{active:show=='all'}">
             All Notes
           </button>
         </div>
-        <!-- Favorites Button -->
+        <!-- 显示喜欢的内容的按钮 -->
         <div class="btn-group" role="group">
           <button @click="show='favorites'" type="button" class="btn btn-default" v-bind:class="{active:show=='favorites'}">
             Favorites
@@ -17,9 +17,10 @@
         </div>
       </div>
     </div>
-    <!-- render notes in a list -->
+    <!-- 内容列表 -->
     <div class="container">
       <div class="list-group">
+        <!-- 设置激活项样式 -->
         <a v-for="item in notes" class="list-group-item" v-bind:class="{active:activeNote == item}" v-on:click="updateActiveNote(item)" href="#">
           <h4 class="list-group-item-heading">
             {{item.text}}
@@ -39,10 +40,13 @@ export default {
     }
   },
   computed:{
+    //切换显示内容
     notes(){
       if (this.show=='all'){
         return this.$store.getters.notes
-      }else if(this.show=='favorites'){
+      }
+      else if(this.show=='favorites'){
+        //过滤非喜爱页
         return this.$store.getters.notes.filter(note=>note.favorite)
       }
     },
@@ -52,7 +56,7 @@ export default {
   },
   methods:{
     updateActiveNote(note){
-      console.log(note)
+      //切换内容
       this.$store.dispatch('updateActiveNote',note)
     }
   }
